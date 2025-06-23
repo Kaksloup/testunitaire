@@ -53,3 +53,4 @@ CodeCoverage/
 TestResult.xml
 nunit-*.xml
 /Exercice.Tests/.idea
+/Exercice.Tests/.vs
