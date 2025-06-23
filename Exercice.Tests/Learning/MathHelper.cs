@@ -7,7 +7,7 @@ public class MathHelper
     /// </summary>
     /// <param name="number">The integer to check for evenness.</param>
     /// <returns>Returns true if the specified integer is even; otherwise, false.</returns>
-    public bool IsEven(int number)
+    public static bool IsEven(int number)
     {
         return number % 2 == 0;
     }
