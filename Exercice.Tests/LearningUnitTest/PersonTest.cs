@@ -22,16 +22,17 @@ public class PersonTest
     [InlineData(18, true)]
     [InlineData(25, true)]
     [InlineData(0, false)]
+    [InlineData(-1, false)]
     public void IsAdult_DifferentAges_ReturnsCorrectResult(int age, bool expected)
     {
         // arrange 
         Person person = new Person { Age = age };
         
         // Act
-        bool IsAdult = person.IsAdult();
+        bool isAdult = person.IsAdult();
         
         // Assert
-        Assert.Equal(IsAdult, expected);
+        Assert.Equal(isAdult, expected);
     }
 
     [Theory]
@@ -46,9 +47,9 @@ public class PersonTest
         Person person = new Person { Age = age };
         
         // Act
-        bool IsValidAge = person.IsValidAge();
+        bool isValidAge = person.IsValidAge();
         
         // Assert
-        Assert.Equal(IsValidAge, expected);
+        Assert.Equal(isValidAge, expected);
     }
 }
