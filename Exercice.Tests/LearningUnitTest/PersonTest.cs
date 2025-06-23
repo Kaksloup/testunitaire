@@ -16,6 +16,59 @@ public class PersonTest
         // Assert
         Assert.Equal("John Doe", fullName);
     }
+    
+    [Fact]
+    public void GetFullName_WithLastName_ReturnsFormattedName()
+    {
+        // Arrange
+        Person person = new Person { FirstName = "", LastName = "Doe" };
+        
+        // Act 
+        string fullName = person.GetFullName();
+        
+        // Assert
+        Assert.Equal("Doe", fullName);
+    }
+    
+    [Fact]
+    public void GetFullName_WithFirstName_ReturnsFormattedName()
+    {
+        // Arrange
+        Person person = new Person { FirstName = "John", LastName = "" };
+        
+        // Act 
+        string fullName = person.GetFullName();
+        
+        // Assert
+        Assert.Equal("John", fullName);
+    }
+    
+    [Fact]
+    public void GetFullName_WithNoNames_ReturnsFormattedName()
+    {
+        // Arrange
+        Person person = new Person { FirstName = "", LastName = "" };
+        
+        // Act 
+        string fullName = person.GetFullName();
+        
+        // Assert
+        Assert.Equal("", fullName);
+    }
+    
+    
+    [Fact]
+    public void GetFullName_WithSpace_ReturnsFormattedName()
+    {
+        // Arrange
+        Person person = new Person { FirstName = "John  ", LastName = " Doe    " };
+        
+        // Act 
+        string fullName = person.GetFullName();
+        
+        // Assert
+        Assert.Equal("John Doe", fullName);
+    }
 
     [Theory]
     [InlineData(17, false)]
