@@ -6,46 +6,60 @@ public class NumberList : INumberList
 
     public void Add(int number)
     {
-        throw new NotImplementedException();
+        _numbers.Add(number);
     }
 
     public bool Remove(int number)
     {
-        throw new NotImplementedException();
+        if (_numbers.Contains(number))
+        {
+            _numbers.Remove(number);
+            return true;
+        }
+        return false;
     }
 
     public void Clear()
     {
-        throw new NotImplementedException();
+        _numbers.Clear();
     }
 
     public int Count()
     {
-        throw new NotImplementedException();
+        return _numbers.Count;
     }
 
     public int Sum()
     {
-        throw new NotImplementedException();
+        if (_numbers.Count == 0)
+            return 0;
+
+        return _numbers.Sum();
     }
 
     public int Max()
     {
-        throw new NotImplementedException();
+        if (_numbers.Count == 0)
+            return 0;
+        return _numbers.Max();
     }
 
     public int Min()
     {
-        throw new NotImplementedException();
+        if (_numbers.Count == 0)
+            return 0;
+        return _numbers.Min();
     }
 
     public double Average()
     {
-        throw new NotImplementedException();
+        if (_numbers.Count == 0)
+            return 0.0;
+        return _numbers.Average();
     }
 
     public bool Contains(int number)
     {
-        throw new NotImplementedException();
+        return _numbers.Contains(number);
     }
 }
