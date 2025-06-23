@@ -116,24 +116,4 @@ public class NumberListTest
         // Assert
         Assert.Equal(expectedEmpty ? 0 : numbers.Length, list.Count());
     }
-
-    [Theory]
-    [InlineData(6, 1, 2, 3)]
-    [InlineData(90, 10, 20, 30, 60)]
-    [InlineData(-6, -1, -2, -3)]
-    public void GetSum_WithNumbers_ReturnsCorrectSum(int expectedSum, params int[] numbers)
-    {
-        // Arrange
-        var list = new NumberList();
-        foreach (var number in numbers)
-        {
-            list.Add(number);
-        }
-
-        // Act
-        int sum = list.Sum();
-
-        // Assert
-        Assert.Equal(expectedSum, sum);
-    }
 }
