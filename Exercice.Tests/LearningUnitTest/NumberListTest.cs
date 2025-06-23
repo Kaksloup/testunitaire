@@ -29,7 +29,7 @@ public class NumberListTest
     [Fact]
     public void Remove_NonExistingNumber_ReturnsFalse()
     {
-       
+
     }
 
     [Fact]
