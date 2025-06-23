@@ -1,3 +1,5 @@
+using Learning;
+
 namespace LearningUnitTest;
 
 public class PersonTest
@@ -5,7 +7,14 @@ public class PersonTest
     [Fact]
     public void GetFullName_WithFirstAndLastName_ReturnsFormattedName()
     {
-     
+        // Arrange
+        Person person = new Person { FirstName = "John", LastName = "Doe" };
+        
+        // Act 
+        string fullName = person.GetFullName();
+        
+        // Assert
+        Assert.Equal("John Doe", fullName);
     }
 
     [Theory]
@@ -15,7 +24,14 @@ public class PersonTest
     [InlineData(0, false)]
     public void IsAdult_DifferentAges_ReturnsCorrectResult(int age, bool expected)
     {
+        // arrange 
+        Person person = new Person { Age = age };
         
+        // Act
+        bool IsAdult = person.IsAdult();
+        
+        // Assert
+        Assert.Equal(IsAdult, expected);
     }
 
     [Theory]
@@ -26,6 +42,13 @@ public class PersonTest
     [InlineData(151, false)]
     public void IsValidAge_DifferentAges_ReturnsCorrectResult(int age, bool expected)
     {
-    
+        // arrange 
+        Person person = new Person { Age = age };
+        
+        // Act
+        bool IsValidAge = person.IsValidAge();
+        
+        // Assert
+        Assert.Equal(IsValidAge, expected);
     }
 }
